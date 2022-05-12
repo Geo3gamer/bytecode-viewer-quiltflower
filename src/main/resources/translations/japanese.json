@@ -121,7 +121,7 @@
 
   "PROCYON_DECOMPILER": "プロキオンデコンパイラ",
   "CFR_DECOMPILER": "CFRデコンパイラー",
-  "FERNFLOWER_DECOMPILER": "FernFlowerデコンパイラ",
+  "FERNFLOWER_DECOMPILER": "Quiltflowerデコンパイラ",
   "JADX_DECOMPILER": "JADXデコンパイラー",
   "JD_DECOMPILER": "JD-GUIデコンパイラー",
   "BYTECODE_DISASSEMBLER": "バイトコード・ディスアセンブラ",

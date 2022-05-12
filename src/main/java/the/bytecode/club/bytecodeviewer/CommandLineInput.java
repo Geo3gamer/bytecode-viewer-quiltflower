@@ -244,7 +244,7 @@ public class CommandLineInput {
                     }
                 }
             } else if (decompiler.equalsIgnoreCase("fernflower")) {
-                System.out.println("Decompiling " + input.getAbsolutePath() + " with FernFlower");
+                System.out.println("Decompiling " + input.getAbsolutePath() + " with Quiltflower");
                 BytecodeViewer.openFiles(new File[]{input}, false);
 
                 Thread.sleep(5 * 1000);

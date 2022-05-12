@@ -161,7 +161,21 @@ public class FernFlowerDecompiler extends InternalDecompiler
                 "-rer=" + r(BytecodeViewer.viewer.rer.isSelected()),
                 "-fdi=" + r(BytecodeViewer.viewer.fdi.isSelected()),
                 "-asc=" + r(BytecodeViewer.viewer.asc.isSelected()),
-                "-ren=" + r(BytecodeViewer.viewer.ren.isSelected()), className,
+                "-ren=" + r(BytecodeViewer.viewer.ren.isSelected()),
+                "-lit=" + r(BytecodeViewer.viewer.lit.isSelected()),
+                "-inn=" + r(BytecodeViewer.viewer.inn.isSelected()),
+                "-lac=" + r(BytecodeViewer.viewer.lac.isSelected()),
+                "-bsm=" + r(BytecodeViewer.viewer.bsm.isSelected()),
+                "-iib=" + r(BytecodeViewer.viewer.iib.isSelected()),
+                "-vac=" + r(BytecodeViewer.viewer.vac.isSelected()),
+                "-tcs=" + r(BytecodeViewer.viewer.tcs.isSelected()),
+                "-pam=" + r(BytecodeViewer.viewer.pam.isSelected()),
+                "-tlf=" + r(BytecodeViewer.viewer.tlf.isSelected()),
+                "-tco=" + r(BytecodeViewer.viewer.tco.isSelected()),
+                "-isl=" + r(BytecodeViewer.viewer.isl.isSelected()),
+                "-jvn=" + r(BytecodeViewer.viewer.jvn.isSelected()),
+                "-jrt=" + r(BytecodeViewer.viewer.jrt.isSelected()),
+                className,
                 folder};
     }
 

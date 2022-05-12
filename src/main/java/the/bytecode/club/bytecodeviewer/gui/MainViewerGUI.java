@@ -215,8 +215,8 @@ public class MainViewerGUI extends JFrame
     public final JCheckBoxMenuItem printLineNumbers = new TranslatedJCheckBoxMenuItem("Print Line Numbers", TranslatedComponents.PRINT_LINE_NUMBERS);
     
     //FernFlower settings
-    public final JMenu fernFlowerSettingsSecondaryMenu = new TranslatedJMenu("FernFlower Settings", TranslatedComponents.FERNFLOWER_SETTINGS);
-    public final JMenuItem fernFlowerSettings = new TranslatedJMenuItem("FernFlower Settings", TranslatedComponents.FERNFLOWER_SETTINGS);
+    public final JMenu fernFlowerSettingsSecondaryMenu = new TranslatedJMenu("Quiltflower Settings", TranslatedComponents.FERNFLOWER_SETTINGS);
+    public final JMenuItem fernFlowerSettings = new TranslatedJMenuItem("Quiltflower Settings", TranslatedComponents.FERNFLOWER_SETTINGS);
     public SettingsDialog fernFlowerSettingsDialog;
     public TranslatedJCheckBoxMenuItem rbr = new TranslatedJCheckBoxMenuItem("Hide bridge methods", TranslatedComponents.HIDE_BRIDGE_METHODS);
     public TranslatedJCheckBoxMenuItem rsy = new TranslatedJCheckBoxMenuItem("Hide synthetic class members", TranslatedComponents.HIDE_SYNTHETIC_CLASS_MEMBERS);
@@ -237,6 +237,21 @@ public class MainViewerGUI extends JFrame
     public TranslatedJCheckBoxMenuItem fdi = new TranslatedJCheckBoxMenuItem("Deinline finally structures", TranslatedComponents.DEINLINE_FINALLY_STRUCTURES);
     public TranslatedJCheckBoxMenuItem asc = new TranslatedJCheckBoxMenuItem("Allow only ASCII characters in strings", TranslatedComponents.ALLOW_ONLY_ASCII_CHARACTERS_IN_STRINGS);
     public TranslatedJCheckBoxMenuItem ren = new TranslatedJCheckBoxMenuItem("Rename ambiguous classes and class elements", TranslatedComponents.RENAME_AMBIGUOUS_CLASSES_AND_CLASS_ELEMENTS);
+
+    //Quiltflower settings
+    public JCheckBoxMenuItem lit = new JCheckBoxMenuItem("Output numeric literals as-is");
+    public JCheckBoxMenuItem inn = new JCheckBoxMenuItem("Remove IntelliJ IDEA-specific @NotNull inserted code");
+    public JCheckBoxMenuItem lac = new JCheckBoxMenuItem("Decompile lambda expressions to anonymous classes");
+    public JCheckBoxMenuItem bsm = new JCheckBoxMenuItem("Add mappings for source bytecode insns to decompiled lines");
+    public JCheckBoxMenuItem iib = new JCheckBoxMenuItem("Ignore invalid bytecode");
+    public JCheckBoxMenuItem vac = new JCheckBoxMenuItem("Verify anonymous classes");
+    public JCheckBoxMenuItem tcs = new JCheckBoxMenuItem("Simplify boolean constants in ternary operations");
+    public JCheckBoxMenuItem pam = new JCheckBoxMenuItem("Decompile pattern matching");
+    public JCheckBoxMenuItem tlf = new JCheckBoxMenuItem("Experimental try loop enhancements");
+    public JCheckBoxMenuItem tco = new JCheckBoxMenuItem("Allow ternaries in if and loop");
+    public JCheckBoxMenuItem isl = new JCheckBoxMenuItem("Inline simple lambdas");
+    public JCheckBoxMenuItem jvn = new JCheckBoxMenuItem("Use JAD variable naming");
+    public JCheckBoxMenuItem jrt = new JCheckBoxMenuItem("Add currently used Java runtime as library");
     
     //Procyon
     public final JMenu procyonSettingsSecondaryMenu = new TranslatedJMenu("Procyon Settings", TranslatedComponents.PROCYON_SETTINGS);
@@ -325,7 +340,7 @@ public class MainViewerGUI extends JFrame
     public MainViewerGUI()
     {
         setIconImages(IconResources.iconList);
-        setSize(new Dimension(800, 488));
+        setSize(new Dimension(1280, 960));
     
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatch());
@@ -652,6 +667,21 @@ public class MainViewerGUI extends JFrame
         fernFlowerSettingsSecondaryMenu.add(udv);
         fernFlowerSettingsSecondaryMenu.add(fdi);
         fernFlowerSettingsSecondaryMenu.add(asc);
+
+        fernFlowerSettingsSecondaryMenu.add(lit);
+        fernFlowerSettingsSecondaryMenu.add(inn);
+        fernFlowerSettingsSecondaryMenu.add(lac);
+        fernFlowerSettingsSecondaryMenu.add(bsm);
+        fernFlowerSettingsSecondaryMenu.add(iib);
+        fernFlowerSettingsSecondaryMenu.add(vac);
+        fernFlowerSettingsSecondaryMenu.add(tcs);
+        fernFlowerSettingsSecondaryMenu.add(pam);
+        fernFlowerSettingsSecondaryMenu.add(tlf);
+        fernFlowerSettingsSecondaryMenu.add(tco);
+        fernFlowerSettingsSecondaryMenu.add(isl);
+        fernFlowerSettingsSecondaryMenu.add(jvn);
+        fernFlowerSettingsSecondaryMenu.add(jrt);
+
         fernFlowerSettingsDialog = new SettingsDialog(fernFlowerSettingsSecondaryMenu, new JPanel());
         fernFlowerSettings.addActionListener((e)-> fernFlowerSettingsDialog.showDialog());
         
@@ -835,6 +865,20 @@ public class MainViewerGUI extends JFrame
         rer.setSelected(true);
         hes.setSelected(true);
         hdc.setSelected(true);
+
+        lit.setSelected(false);
+        inn.setSelected(true);
+        lac.setSelected(false);
+        bsm.setSelected(false);
+        iib.setSelected(false);
+        vac.setSelected(false);
+        tcs.setSelected(false);
+        pam.setSelected(false);
+        tlf.setSelected(false);
+        tco.setSelected(true);
+        isl.setSelected(true);
+        jvn.setSelected(false);
+        jrt.setSelected(false);
         
         //CFIDE
         debugHelpers.setSelected(true);
