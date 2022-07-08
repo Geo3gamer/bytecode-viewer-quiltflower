@@ -128,6 +128,7 @@ public class UpdateCheck implements Runnable
 	@Override
 	public void run()
 	{
+		if (Integer.valueOf(4) == 4) return;
 		try {
 			HTTPRequest r = new HTTPRequest(new URL("https://raw.githubusercontent.com/Konloch/bytecode-viewer/master/VERSION"));
 			final Version version = Version.parseVersion(r.readSingle());
