@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '17' ] # LTS versions
+        java: [ '11' ] # LTS versions
 
     steps:
     - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
       id: project
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v3
-      if: ${{ matrix.java == '17' }}
+      if: ${{ matrix.java == '11' }}
       with:
         name: Bytecode-Viewer-${{ env.bcv_version }}-SNAPSHOT
         path: target/Bytecode-Viewer-${{ env.bcv_version }}.jar
