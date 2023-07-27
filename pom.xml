@@ -3,7 +3,7 @@
 
     <groupId>the.bytecode.club</groupId>
     <artifactId>Bytecode-Viewer</artifactId>
-    <version>2.11.2-quiltflower</version>
+    <version>2.11.2-vineflower</version>
 
     <properties>
         <!-- Project settings -->
