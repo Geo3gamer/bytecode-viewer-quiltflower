@@ -32,7 +32,7 @@
         <darklaf-extensions-rsta.version>0.4.1</darklaf-extensions-rsta.version>
         <decompiler-fernflower.version>6.2.5.Final</decompiler-fernflower.version>
         <dex2jar.version>v64</dex2jar.version>
-        <fernflower.version>1.9.0</fernflower.version>
+        <fernflower.version>1.9.1-SNAPSHOT</fernflower.version>
         <gson.version>2.10.1</gson.version>
         <guava.version>32.1.1-jre</guava.version>
         <httprequest.version>2.2.0</httprequest.version>
@@ -69,11 +69,7 @@
         </repository>
         <repository>
             <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>quilt</id>
-            <url>https://maven.quiltmc.org/repository/release/</url>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
@@ -201,8 +197,8 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.quiltmc</groupId>
-            <artifactId>quiltflower</artifactId>
+            <groupId>org.vineflower</groupId>
+            <artifactId>vineflower</artifactId>
             <version>${fernflower.version}</version>
         </dependency>
         <dependency>
