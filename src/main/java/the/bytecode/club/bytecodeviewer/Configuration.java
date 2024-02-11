@@ -2,6 +2,8 @@ package the.bytecode.club.bytecodeviewer;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
+
 import the.bytecode.club.bytecodeviewer.bootloader.BootState;
 import the.bytecode.club.bytecodeviewer.gui.theme.LAFTheme;
 import the.bytecode.club.bytecodeviewer.gui.theme.RSTATheme;
@@ -83,8 +85,8 @@ public class Configuration
 	public static boolean verifyCorruptedStateOnBoot = false; //eventually may be a setting
 	
 	public static BootState bootState = BootState.START_UP;
-	public static Language language = Language.ENGLISH;
-	public static LAFTheme lafTheme = LAFTheme.SYSTEM; //lightmode by default since it uses the system theme
+	public static Language language = guessBestLanguage();
+	public static LAFTheme lafTheme = LAFTheme.DARK;
 	public static RSTATheme rstaTheme = lafTheme.getRSTATheme();
 	public static long lastHotKeyExecuted = 0;
 	
@@ -138,4 +140,14 @@ public class Configuration
 		return new File(".");
 	}
 	
+	public static Language guessBestLanguage()
+	{
+		Language language = Language.getLanguageCodeLookup().get(Locale.getDefault().getLanguage());
+		
+		if(language != null)
+			return language;
+		
+		//fallback to english
+		return Language.ENGLISH;
+	}
 }
